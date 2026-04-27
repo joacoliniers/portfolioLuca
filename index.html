@@ -1,101 +1,130 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mi PortFolio</title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="icon" href="logo.jpg" type="image/jpg">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    </head>
 
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi PortFolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.jpg" type="image/jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
 
-        <nav class="navbar">
-            <div class="nav-logo">
-                <img src="logo.jpg" alt="logo" class="logo-img">
-            </div> 
-            
-            <ul class="menu">
-                <li><a href="#sobreMi">Sobre Mi</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-            </ul>
+<body>
 
-            <div class="nav-redes">
-                <a href="https://www.youtube.com/@LucaLiniers" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://www.instagram.com/luca_linii/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://x.com/LiniiLuca" target="_blank" title="X (Twitter)"><i class="fa-brands fa-twitter"></i></a>
-                <a href="https://www.tiktok.com/@lucaliniers" target="_blank" title="tiktok"><i class="fa-brands fa-tiktok"></i></a>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="logo.jpg" alt="logo" class="logo-img">
+        </div>
+
+        <ul class="menu">
+            <li><a href="#sobreMi">Sobre Mi</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+        </ul>
+
+        <div class="nav-redes">
+            <a href="https://www.youtube.com/@LucaLiniers" target="_blank" title="YouTube"><i
+                    class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com/luca_linii/" target="_blank" title="Instagram"><i
+                    class="fa-brands fa-instagram"></i></a>
+            <a href="https://x.com/LiniiLuca" target="_blank" title="X (Twitter)"><i
+                    class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.tiktok.com/@lucaliniers" target="_blank" title="tiktok"><i
+                    class="fa-brands fa-tiktok"></i></a>
+        </div>
+
+    </nav>
+
+    <header>
+
+        <img src="1000324234.jpg" alt="foto de luca" class="foto-luca">
+        <h1>Luca Martin Liniers</h1>
+        <h2>Estudiante de Licenciatura en Ciencias Economicas</h2>
+    </header>
+
+
+
+    <main>
+
+        <section id="sobre-mi">
+            <h3>Experiencia y Habilidades</h3>
+
+            <div class="grilla-experiencia">
+
+                <div class="tarjeta-exp" onclick="toggleTarjeta(this)">
+                    <div class="tarjeta-cabecera">
+                        <h4><i class="fa-solid fa-chart-line"></i> Economista Financiero</h4>
+                        <i class="fa-solid fa-chevron-down flecha"></i>
+                    </div>
+                    <div class="tarjeta-contenido">
+                        <p>Especialista en análisis macroeconómico y gestión de riesgo. Elaboración de estrategias
+                            basadas en el comportamiento de los mercados globales y políticas monetarias.</p>
+                    </div>
+                </div>
+
+                <div class="tarjeta-exp" onclick="toggleTarjeta(this)">
+                    <div class="tarjeta-cabecera">
+                        <h4><i class="fa-solid fa-headset"></i> Streamer Trader</h4>
+                        <i class="fa-solid fa-chevron-down flecha"></i>
+                    </div>
+                    <div class="tarjeta-contenido">
+                        <p>Operativa técnica en vivo interactuando con la comunidad. Análisis de gráficos en tiempo
+                            real, lectura de velas japonesas y ejecución de operaciones en stream.</p>
+                    </div>
+                </div>
+
+                <div class="tarjeta-exp" onclick="toggleTarjeta(this)">
+                    <div class="tarjeta-cabecera">
+                        <h4><i class="fa-solid fa-building-columns"></i> Auditor Contable (SGCBA)</h4>
+                        <i class="fa-solid fa-chevron-down flecha"></i>
+                    </div>
+                    <div class="tarjeta-contenido">
+                        <p>Especialista en análisis macroeconómico y gestión de riesgo. Elaboración de estrategias
+                            basadas en el comportamiento de los mercados globales y políticas monetarias.</p>
+                    </div>
+                </div>
+
+                <div class="tarjeta-exp" onclick="toggleTarjeta(this)">
+                    <div class="tarjeta-cabecera">
+                        <h4><i class="fa-solid fa-school"></i> Docente Taller de Economia</h4>
+                        <i class="fa-solid fa-chevron-down flecha"></i>
+                    </div>
+                    <div class="tarjeta-contenido">
+                        <p>Especialista en análisis macroeconómico y gestión de riesgo. Elaboración de estrategias
+                            basadas en el comportamiento de los mercados globales y políticas monetarias.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h3>Ultimo Directo</h3>
+
+            <div class="contenedor-video">
+                <iframe src="https://www.youtube.com/embed/U9SKf84jPKU?si=hRd-GM-OAiK7yCZ1" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
             </div>
 
-        </nav>
+            <p class="texto-stream"> Opero en vivo y analizo el mercado todas las semanas. <br> <strong>¡Suscribite a mi
+                    canal para no perderte el próximo!</strong></p>
+        </section>
 
-        <header>
+    </main>
 
-            <img src="1000324234.jpg" alt="foto de luca" class="foto-luca">
-            <h1>Luca Martin Liniers</h1>
-            <h2>Estudiante de Licenciatura en Ciencias Economicas</h2>
-        </header>
+    <script>
+        // La función recibe como parámetro el elemento HTML exacto que clickeaste (el "this")
+        function toggleTarjeta(elemento) {
+            // Le agrega o le quita la clase "abierta" como si fuera un interruptor de luz
+            elemento.classList.toggle("abierta");
+        }
+    </script>
+
+</body>
 
 
-
-        <main>
-
-            <section id="sobreMi">
-                <h3>Habilidades</h3>
-                <div class="matriz-habilidades">
-
-                    <div class="habilidad">Economista Financiero</div>
-                    <div class="habilidad">Streamer Trader</div>
-                    <div class="habilidad">Auditor Contable (SGCBA)</div>
-                    <div class="habilidad">Ex-Docente de Taller de Economia</div>
-
-                </div>
-            </section> 
-                
-            <section id="proyectos">
-
-                <h3>Mis Proyectos</h3>
-
-                <div class="contenedor-tarjetas">
-
-                    <div class="tarjeta">
-                        <h4>Bot de Trading automatico</h4>
-                        <p>Desarrollo de un algoritmo para operar en el mercado de criptomonedas.</p>
-                    </div>
-
-                    <div class="tarjeta">
-                        <h4>Analisis Macroeconomicos</h4>
-                        <p>Reporte de impacto de la inflación en pymes del sector tecnológico.</p>
-                    </div>
-
-                </div>
-
-            </section>
-
-            <section id="contacto"> <h3>Ultimo Directo</h3>
-
-                <div class="contenedor-video">
-                    <iframe 
-                        src="https://www.youtube.com/embed/U9SKf84jPKU?si=hRd-GM-OAiK7yCZ1" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-
-                <p class="texto-stream"> Opero en vivo y analizo el mercado todas las semanas. <br> <strong>¡Suscribite a mi canal para no perderte el próximo!</strong></p>
-            </section>
-
-        </main>
-
-        <footer>
-
-        </footer>
-        
-    </body>
-
-    
 </html>

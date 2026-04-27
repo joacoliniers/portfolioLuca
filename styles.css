@@ -1,122 +1,205 @@
-body{
+/* =========================================
+   1. CONFIGURACIÓN GLOBAL Y ESTRUCTURA BASE
+   ========================================= */
 
-    color: rgba(255, 255, 255, 0.8); 
-    font-family: sans-serif;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-
-    background-image: 
-        linear-gradient(rgb(40, 40, 40), rgba(40, 40, 40, 0.884)), 
-        url('fondo.png'); 
-    
-    
-    background-size: cover; 
-    background-position: center; 
-    background-attachment: fixed; 
-}
-
-
-header{
-
-    text-align: center;
-}
-
-.tarjeta{
-
-    background-color: rgba(255, 255, 255, 0.178);
-    padding: 10px;
-    transition: transform 0.3s ease, background-color 0,3s ease;
-}
-
-.tarjeta:hover{
-
-    transform: translateY(-5px);
-    background-color: rgba(255, 255, 255, 0.267);
-    cursor: pointer;
-}
-
-.contenedor-tarjetas{
-
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
-}
-
-@media (max-width: 768px) {
-    .contenedor-tarjetas {
-        flex-direction: column; 
-    }
-}
-
-.foto-luca{
-
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-    border: 3px solid rgba(255, 255, 255, 0.5);
-
-}
-
-html{
-
+html {
+    /* Hace que al hacer clic en un link del menú, la página baje suavemente en vez de saltar de golpe */
     scroll-behavior: smooth;
 }
 
-.formulario button {
-    padding: 12px;
-    background-color: #222222;
+body {
+    color: rgba(255, 255, 255, 0.8); 
+    font-family: sans-serif;
+    max-width: 800px; /* Ancho máximo para que no se estire infinito en monitores ultra anchos */
+    margin: 0 auto; /* Centra todo el contenido en la pantalla */
+    padding: 20px; /* Aire a los costados para que el texto no toque el borde en celulares */
+
+    /* El efecto de las velas de fondo con el filtro oscuro encima */
+    background-image: 
+        linear-gradient(rgb(40, 40, 40), rgba(40, 40, 40, 0.884)), 
+        url('fondo.png'); 
+    background-size: cover; /* Fuerza a la imagen a ocupar todo el espacio */
+    background-position: center; 
+    background-attachment: fixed; /* Efecto parallax (el fondo queda fijo al scrollear) */
+}
+
+/* =========================================
+   2. BARRA DE NAVEGACIÓN (NAVBAR)
+   ========================================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Distribuye Logo (izq), Menú (centro) y Redes (der) */
+    align-items: center;
+    background-color: #111111;
+    padding: 15px 40px;
+    border-radius: 12px;
+    margin-bottom: 50px;
+    
+    /* Efecto "Pegajoso": La barra baja con vos cuando scrolleas */
+    position: sticky;
+    top: 15px;
+    z-index: 1000; /* Asegura que la barra pase por encima de cualquier otro elemento */
+}
+
+/* Bloque Izquierdo: El Logo */
+.nav-logo {
+    flex: 1; /* Funciona como resorte para centrar el menú */
+    display: flex;
+    justify-content: flex-start;
+    height: 45px; 
+    width: auto;
+    border-radius: 50%; 
+}
+
+/* Bloque Central: Los Links */
+.menu {
+    display: flex;
+    gap: 30px; /* Espacio entre cada link del menú */
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Le saca los puntitos a la lista HTML */
+}
+
+.menu a {
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    text-decoration: none; /* Le saca el subrayado a los links */
     font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: color 0.3s;
 }
 
-.formulario button:hover {
-    background-color: #555555;
-    transform: scale(1.02); 
+.menu a:hover {
+    color: #888888; /* Se pone gris al pasar el mouse */
 }
 
-.matriz-habilidades {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 15px; 
-    margin-top: 20px;
+/* Bloque Derecho: Los íconos de Redes Sociales */
+.nav-redes {
+    flex: 1; /* El otro resorte para centrar el menú */
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-end;
 }
 
-
-.habilidad {
-    background-color: #2a2a2a;
+.nav-redes a {
     color: #ffffff;
-    padding: 15px;
-    border-left: 4px solid #adadad; 
-    border-radius: 4px;
-    text-align: center;
-    font-weight: bold;
+    font-size: 22px; 
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
-@media (max-width: 600px) {
-    .grilla-habilidades {
-        grid-template-columns: 1fr; 
-    }
+.nav-redes a:hover {
+    color: #888888; 
+    transform: scale(1.15); /* Efecto de zoom al pasar el mouse */
 }
+
+/* =========================================
+   3. ENCABEZADO Y PERFIL
+   ========================================= */
+
+header {
+    text-align: center; /* Centra la foto de Luca y sus títulos */
+}
+
+.foto-luca {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Transforma la imagen cuadrada en un círculo perfecto */
+    object-fit: cover; /* Evita que la foto se deforme o aplaste */
+    margin-bottom: 15px;
+    border: 3px solid rgba(255, 255, 255, 0.5); /* Anillo blanco semitransparente alrededor */
+}
+
+/* =========================================
+   4. ESTRUCTURA DE SECCIONES GENERALES
+   ========================================= */
+
+section {
+    margin-top: 60px; /* Empuja la sección hacia abajo */
+    margin-bottom: 80px; /* Deja aire antes de que empiece la siguiente */
+}
+
+section h3 {
+    margin-bottom: 30px; /* Espacio entre el título de la sección y su contenido */
+    font-size: 24px;
+}
+
+/* =========================================
+   5. HABILIDADES / EXPERIENCIA (Grilla 2x2)
+   ========================================= */
+
+.grilla-experiencia {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Crea 2 columnas del mismo tamaño */
+    gap: 15px; /* Espacio entre las cajas */
+    margin-top: 20px;
+    align-items: start;
+}
+
+.tarjeta-exp {
+    background-color: rgba(30, 30, 30, 0.85);
+    padding: 20px 25px;
+    border-radius: 12px;
+    border-left: 4px solid #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.tarjeta-exp:hover {
+    background-color: rgba(50, 50, 50, 0.95);
+}
+.tarjeta-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tarjeta-cabecera h4 {
+    margin: 0;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+}
+.flecha {
+    color: #ffffff;
+    transition: transform 0.4s ease; /* Tarda casi medio segundo en girar */
+}
+.tarjeta-contenido {
+    max-height: 0; /* Lo colapsamos a cero */
+    overflow: hidden; /* Cortamos cualquier texto que sobresalga */
+    transition: max-height 0.4s ease, margin-top 0.4s ease; /* Transición suave al abrir */
+}
+.tarjeta-contenido p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.tarjeta-exp.abierta .tarjeta-contenido {
+    max-height: 200px; /* Un valor alto para que entre el párrafo entero */
+    margin-top: 15px; /* Separamos el párrafo del título */
+}
+
+.tarjeta-exp.abierta .flecha {
+    transform: rotate(180deg); /* La flecha mira hacia arriba */
+}
+
+/* =========================================
+   6. SECCIÓN DE DIRECTOS (Reproductor YouTube)
+   ========================================= */
 
 .contenedor-video {
     max-width: 700px; 
-    margin: 0 auto; 
+    margin: 0 auto; /* Centra el reproductor en la pantalla */
     width: 100%;
     border-radius: 10px;
-    overflow: hidden; 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+    overflow: hidden; /* Corta las puntas del video para que respete el borde redondeado */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra oscura para despegarlo del fondo */
 }
 
 .contenedor-video iframe {
     width: 100%;
-    aspect-ratio: 16 / 9; 
+    aspect-ratio: 16 / 9; /* Mantiene la proporción del video para que no se estire */
     display: block;
 }
 
@@ -124,82 +207,25 @@ html{
     text-align: center;
     margin-top: 20px;
     font-size: 16px;
-    line-height: 1.5; 
+    line-height: 1.5; /* Separa los renglones del texto para mayor legibilidad */
     color: rgba(255, 255, 255, 0.9);
 }
 
-section{
+/* =========================================
+   7. DISEÑO RESPONSIVO (Adaptación a Celulares)
+   ========================================= */
 
-    margin-top: 60px;
-    margin-bottom: 80px;
+/* Cuando la pantalla mida menos de 600px de ancho (celulares) */
+@media (max-width: 600px) {
+    /* NOTA: Acá en tu código original decía .grilla-habilidades pero arriba usás .matriz-habilidades. 
+       Asegurate de que los nombres coincidan para que funcione en el celu. */
+    .grilla-habilidades {
+        grid-template-columns: 1fr; /* Pasa de 2 columnas a 1 sola columna */
+    }
 }
 
-section h3{
-
-    margin-bottom: 30px;
-    font-size: 24px;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #111111;
-    padding: 15px 40px;
-    border-radius: 12px;
-    margin-bottom: 50px;
-    position: sticky;
-    top: 15px;
-    z-index: 1000;
-}
-
-.nav-logo {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-    height: 45px; /* Controlamos el tamaño desde la altura */
-    width: auto;
-    border-radius: 50%; /* Si tu logo es cuadrado, esto lo hace redondo */
-}
-
-.nav-redes {
-    flex: 1;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-/* Estilo individual de cada ícono */
-.nav-redes a {
-    color: #ffffff;
-    font-size: 22px; /* Controlás el tamaño del logo como si fuera texto */
-    transition: color 0.3s ease, transform 0.2s ease;
-}
-
-/* Efecto al pasar el mouse */
-.nav-redes a:hover {
-    color: #888888; /* Un gris para indicar que es clickeable */
-    transform: scale(1.15); /* Hace que el logo crezca un 15% */
-}
-
-.menu {
-    display: flex;
-    gap: 30px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.menu a{
-
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.menu a:hover{
-
-    color: #888888;
+@media (max-width: 768px) {
+    .contenedor-tarjetas {
+        flex-direction: column; /* Apila las tarjetas una abajo de la otra en vez de lado a lado */
+    }
 }
