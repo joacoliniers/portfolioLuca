@@ -229,3 +229,45 @@ section h3 {
         flex-direction: column; /* Apila las tarjetas una abajo de la otra en vez de lado a lado */
     }
 }
+
+/* =========================================
+   9. PIE DE PÁGINA (FOOTER)
+   ========================================= */
+
+.pie-pagina {
+    text-align: center;
+    margin-top: 80px; /* Lo empuja bien abajo */
+    padding-top: 40px;
+    padding-bottom: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Una línea gris muy sutil que marca el final de la web */
+}
+
+.pie-pagina p {
+    color: rgba(255, 255, 255, 0.6); /* Texto secundario gris claro */
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+/* El recuadro del botón */
+.boton-mail {
+    display: inline-flex; /* Nos permite usar align-items adentro del botón */
+    align-items: center;
+    gap: 10px; /* Separación perfecta entre el sobre y el texto */
+    
+    background-color: #f2f2f2; /* Fondo casi blanco */
+    color: #111111; /* Texto bien oscuro para que contraste */
+    
+    padding: 12px 28px; /* El "aire" interno del recuadro */
+    border-radius: 8px; /* Bordes ligeramente redondeados (estilo Apple) */
+    text-decoration: none; /* Le saca el subrayado horrible de los links */
+    font-weight: bold;
+    font-size: 16px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el mouse por encima del botón */
+.boton-mail:hover {
+    background-color: #ffffff; /* Se ilumina a blanco puro */
+    transform: translateY(-3px); /* Da un saltito hacia arriba */
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2); /* Se prende un brillo tenue alrededor */
+}
