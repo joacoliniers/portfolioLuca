@@ -17,7 +17,7 @@ body {
     /* El efecto de las velas de fondo con el filtro oscuro encima */
     background-image: 
         linear-gradient(rgb(40, 40, 40), rgba(40, 40, 40, 0.884)), 
-        url('/assets/img/fondo.png'); 
+        url('assets/img/fondo.png'); 
     background-size: cover; /* Fuerza a la imagen a ocupar todo el espacio */
     background-position: center; 
     background-attachment: fixed; /* Efecto parallax (el fondo queda fijo al scrollear) */
